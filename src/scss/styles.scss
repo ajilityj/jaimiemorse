@@ -1,15 +1,33 @@
 $beige: #ddd9d4;
+$blue: #101e37;
 $burgandy: #990033;
-$screen-min: 768px;
+$screen-min: 722px;
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  color: $blue;
+  display: flex;
+  flex-direction: column;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.36rem;
+  margin: 1rem 0;
+
+  @media only screen and (min-width: 458px) {
+    font-size: 2rem;
+  }
+}
+
+p {
+  margin: 1rem 0;
 }
 
 a {
@@ -22,149 +40,78 @@ a {
   }
 }
 
-h1 {
-  margin: 0;
-  padding: 5px 0;
+header {
+  background: $beige url(/img/cork-wallet.png);
+  border-bottom: 2px solid $blue;
+  color: $blue;
+  padding: 1.5rem;
+  text-align: center;
 
-  @media screen and (min-width: $screen-min) {
-    padding: 20px 0;
+  .header-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1024px;
+
+    @media only screen and (min-width: $screen-min) {
+      flex-direction: row;
+    }
+
+    img.headshot {
+      border: 4px solid $blue;
+      margin-right: 1rem;
+    }
   }
-}
 
-h2 {
-  border-bottom: 2px solid $burgandy;
-  color: $burgandy;
-  font-size: 2em;
-  font-weight: normal;
-  margin: 20px 0;
-}
-
-h3 {
-  color: $burgandy;
-  margin: 1.5em 0 .5em;
-
-  span {
-    border-bottom: 2px solid $burgandy;
-    padding-bottom: 2px;
+  .header-container--text {
+    @media only screen and (min-width: $screen-min) {
+      text-align: left;
+    }
   }
-}
 
-h4 {
-  color: $burgandy;
-  font-weight: normal;
-  margin: 1.5em 0 -.5em;
-}
+  .header-container--social {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
-p {
-  margin: .5em 0;
+    @media only screen and (min-width: $screen-min) {
+      align-items: flex-start;
+    }
 
-  @media screen and (min-width: $screen-min) {
-    margin: 1em 0;
+    a {
+      align-items: center;
+      display: flex;
+      padding: .125rem 0;
+      width: fit-content;
+    }
+
+    img {
+      margin-right: .5rem;
+      width: 1.25rem;
+    }
   }
+
 }
 
 main {
-  /*background: url(/img/crossword.png);*/
-  max-width: 1440px;
-
-  @media screen and (min-width: $screen-min) {
-    margin-left: 265px; /* matches header width */
-  }
+  flex-grow: 1;
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 footer {
-  background-color: $beige;
-  box-shadow: 0 -2.5px 5px 0 rgba(0,0,0,0.5);
-  font-size: 0.75em;
-  line-height: 1.25;
-  margin-top: 20px;
-  padding: 10px 0;
-  text-align: center;
-
-  @media screen and (min-width: $screen-min) {
-    background-color: unset;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 25px;
-    bottom: 0;
-    text-align: left;
-  }
-}
-
-header {
   background: $beige url(/img/cork-wallet.png);
-  box-shadow: 0 2.5px 5px 0 rgba(0,0,0,0.5);
-  color: $burgandy;
-  padding-bottom: 20px;
-  text-align: center;
-
-  @media screen and (min-width: $screen-min) {
-    box-shadow: 5px 0 5px 0 rgba(0,0,0,0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 0 25px;
-    width: 265px;
-  }
-
-  .address span {
-    display: none;
-
-    @media screen and (min-width: $screen-min) {
-      display: inline;
-    }
-
-    @media screen and (max-height: 485px) {
-      display: none;
-    }
-  }
-
-  .button {
-    border: 2px solid $burgandy;
-    color: $burgandy;
-    display: block;
-    font-weight: bold;
+  border-top: 2px solid $blue;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  padding: .625rem 1.5rem;
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
-    padding: 10px;
-    transition: background-color .5s, color .5s;
-    width: 215px;
-
-    &.active,
-    &:hover {
-      background-color: $burgandy;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-}
-
-img {
-  border: 4px solid $burgandy;
-  display: block;
-  height: auto;
-  margin: 0 auto;
-  max-width: 150px;
-  width: 100%;
-
-  @media screen and (max-height: 390px) and (min-width: $screen-min) {
-    display: none;
-  }
-}
-
-section {
-  padding: 1px 25px;
-}
-
-
-td {
-  padding-bottom: 10px;
-
-  &:first-child {
-    padding-right: 10px;
-    vertical-align: top;
-    white-space: nowrap;
+    max-width: 1024px;
   }
 }
